@@ -18,23 +18,20 @@
       justify-content: center;
       align-items: center;
       margin: 0;
-      /* font-family: Kiwi Maru, serif; */
       font-family: Times New Roman, Times, serif;
       background-color: #1b365d;
-      /* background: rgb(16, 0, 41); */
-      /* background: -webkit-linear-gradient(to right, #1b365d, #000044); */
-      /* Chrome 10-25, Safari 5.1-6 */
-      /* background: linear-gradient(to right, #1b365d, #000044); */
-      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       color: white;
-      text-align: justify;
+      text-align: left;
     }
 
     body>* {
-      /* font-family: Kiwi Maru, serif; */
       font-family: Times New Roman, Times, serif;
       font-weight: 300;
-      /* max-width: 700px; */
+    }
+
+    :root {
+      --footer-height: 4.5rem;
+      --header-height: 3rem;
     }
 
     .container {
@@ -43,7 +40,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: calc(100vh - 8rem);
+      min-height: calc(100vh - calc(var(--footer-height) + var(--header-height)));
     }
 
     header {
@@ -53,23 +50,31 @@
       align-items: center;
       width: 100%;
       top: 0;
-      height: 3rem;
+      height: var(--header-height);
     }
 
     footer {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      /* align-items: center; */
       width: calc(100% - 1rem);
-      height: 5rem;
+      height: var(--footer-height);
       bottom: 0;
       background-color: #25252B;
       padding-left: 1rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: small;
+      font-family: monaco, Consolas, Lucida Console, monospace;
     }
 
     p {
-      font-family: monaco, Consolas, Lucida Console, monospace;
+      padding-bottom: 0.2rem;
+    }
+
+    h1 {
+      text-shadow: 2px 2px 4px #000000;
     }
   </style>
 </head>
@@ -78,7 +83,7 @@
   <header>
   </header>
   <div class="container">
-    <h1>NÄTTII, NÄTTII, TULEEKS PALJON PÖNKELII?</h1>
+    <h1>NÄTTII, NÄTTII! TULEEKS PALJON PÖNKELII?</h1>
   </div>
   <footer>
     <p><span style="color: gray">/* PÖNKELI CSS styleguide: */</span></p>
