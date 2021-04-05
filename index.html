@@ -8,8 +8,6 @@
   <title>
     PÖNKELI
   </title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
   <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
   <style>
     body {
@@ -35,7 +33,7 @@
     }
 
     .container {
-      width: 60%;
+      width: 65%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -57,11 +55,12 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: calc(100% - 1rem);
+      align-items: baseline;
+      width: calc(100% - .5rem);
       height: var(--footer-height);
       bottom: 0;
       background-color: #25252B;
-      padding-left: 1rem;
+      padding-left: .5rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -69,7 +68,7 @@
       font-family: monaco, Consolas, Lucida Console, monospace;
     }
 
-    p {
+    footer p {
       padding-bottom: 0.2rem;
     }
 
@@ -103,16 +102,31 @@
   <header>
   </header>
   <div class="container">
-    <h1 style="margin-top: -1rem;">PÖNKELI</h1>
-    <h3>1. Pönkeli tarkoittaa pönkeliä.</h3>
-    <p style="margin-left: 2rem; font-style: italic; margin-top: -0.5rem;">Esimerkiksi: "Nättii, Nättii! Tuleeks paljon
+    <h1>PÖNKELI</h1>
+
+    <div style="display: flex; flex-direction: row; margin-top: -.8rem;">
+      <h3 style="font-weight: lighter;">1.</h3>
+      <h3 style="margin-left: 1rem;">Pönkeli tarkoittaa pönkeliä.</h3>
+    </div>
+    <p style="margin-left: 2rem; font-style: italic; margin-top: -.3rem;">Esimerkiksi: "Nättii, Nättii! Tuleeks
+      paljon
       Pönkelii?"</p>
-    <h3>2. Pönkeli on pönkeli.</h3>
-    <p style="margin-left: 2rem; font-style: italic; margin-top: -0.5rem;">Esimerkiksi: "Katsos, tämä tässä on pönkeli."
+
+    <div style="display: flex; flex-direction: row; margin-top: -.3rem;">
+      <h3 style="font-weight: lighter;">2.</h3>
+      <h3 style="margin-left: 1rem;">Pönkeli on pönkeli.</h3>
+    </div>
+    <p style="margin-left: 2rem; font-style: italic; margin-top: -0.3rem;">Esimerkiksi: "Katsos, tämä tässä on
+      pönkeli."
     </p>
-    <p>Katso myös: <a href="https://kubernetes.io/">kubernetes</a>, <a href="https://kafka.apache.org/">kafka</a>,
-      <a href="https://www.google.com/search?q=turvekylpy">turvekylpy</a>
+
+    <p>Katso myös: <a href="https://kubernetes.io/">kubernetes</a>,
+      <a href="https://kafka.apache.org/">kafka</a>,
+      <a href="https://www.google.com/search?q=turvekylpy">turvekylpy</a>,
+      <a href="https://www.blueprism.com/">blueprism</a>
+
     </p>
+
     <p style="font-weight: 900; margin-bottom: -.75rem;">Taivutus</p>
     <p><span style="color: rgb(199, 199, 199);">yks. nom.</span> pönkeli, <span style="color: rgb(199, 199, 199);">yks.
         gen. </span> pönkelin, <span style="color: rgb(199, 199, 199);">yks. part. </span> pönkeliä,<span
@@ -121,7 +135,9 @@
         style="color: rgb(199, 199, 199);"> mon. part. </span> pönkeleitä,
       <span style="color: rgb(199, 199, 199);"> mon. ill. </span> pönkeleihin.
     </p>
+
   </div>
+
   <footer>
     <p><span style="color: gray">/* PÖNKELI CSS styleguide: */</span></p>
     <p style="margin-top: -1rem;"><span style="color:cornflowerblue;">font-family<span style="color: red">:</span>
