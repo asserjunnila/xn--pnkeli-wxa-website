@@ -29,22 +29,36 @@
 
     :root {
       --footer-height: 4.5rem;
-      --header-height: 0rem;
+      --header-height: 4rem;
     }
 
     .container {
-      width: 65%;
+      width: 80%;
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      /* flex-direction: row; */
       justify-content: center;
       min-height: calc(100vh - calc(var(--footer-height) + var(--header-height)));
+
+    }
+
+    .left-col {
+      width: 22rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    .right-col {
+      width: 22rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
 
     }
 
     header {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       width: 100%;
       top: 0;
@@ -73,7 +87,11 @@
     }
 
     h1 {
-      text-shadow: 2px 2px 4px #000000;
+      text-shadow: 3px 2px 4px #000000;
+    }
+
+    h3 {
+      margin-bottom: -.5rem;
     }
 
     a {
@@ -95,46 +113,258 @@
     a:active {
       text-decoration: underline;
     }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    th {
+      text-align: center;
+    }
+
+    .table {
+      margin: 1.2rem 0rem 1rem 0rem;
+    }
+
+    hr.solid {
+      border-bottom: .01rem solid rgb(45, 44, 139);
+      margin-bottom: -.75rem;
+
+    }
   </style>
 </head>
 
 <body>
   <header>
+    <div>
+      <h1>PÖNKELI</h1>
+      <!-- <p style="margin-left: 0.5rem; padding-top: 1.2rem; "></p> -->
+    </div>
   </header>
+
   <div class="container">
-    <h1>PÖNKELI</h1>
 
-    <div style="display: flex; flex-direction: row; margin-top: -.8rem;">
-      <h3 style="font-weight: lighter;">1.</h3>
-      <h3 style="margin-left: 1rem;">Pönkeli tarkoittaa pönkeliä.</h3>
+    <div class="left-col">
+      <h3>Substantiivi</h3>
+      <hr class="solid">
+
+      <div style="display: flex; flex-direction: row; margin-top: -.8rem;">
+        <h2 style="font-weight: lighter;">1.</h2>
+        <h2 style="margin-left: 1rem;">Pönkeli tarkoittaa pönkeliä.</h2>
+      </div>
+      <p style="margin-left: 2rem; font-style: italic; margin-top: -.3rem;">Esimerkiksi: "Nättii, Nättii! Tuleeks
+        paljon
+        Pönkelii?"</p>
+
+      <div style="display: flex; flex-direction: row; margin-top: -.3rem;">
+        <h2 style="font-weight: lighter;">2.</h2>
+        <h2 style="margin-left: 1rem;">Pönkeli on pönkeli.</h2>
+      </div>
+      <p style="margin-left: 2rem; font-style: italic; margin-top: -0.3rem;">Esimerkiksi: "PÖNKELI PÖNKELI PÖNKELI
+        PÖNKELI"
+      </p>
+
+
+      <!-- <p style="font-weight: 900; margin-bottom: -.75rem;">Taivutus</p>
+      <p><span style="color: rgb(199, 199, 199);">yks. nom.</span> pönkeli, <span 
+          style="color: rgb(199, 199, 199);">yks.
+          gen. </span> pönkelin, <span style="color: rgb(199, 199, 199);">yks. part. </span> pönkeliä,<span
+          style="color: rgb(199, 199, 199);"> yks.
+          ill. </span> pönkeliin, <span style="color: rgb(199, 199, 199);">mon. gen. </span> pönkelien pönkelten, <span
+          style="color: rgb(199, 199, 199);"> mon. part. </span> pönkeleitä,
+        <span style="color: rgb(199, 199, 199);"> mon. ill. </span> pönkeleihin.
+      </p> -->
+
+      <h3>Ääntäminen</h3>
+      <hr class="solid">
+
+      <ul>
+        <li><a href="https://fi.wiktionary.org/wiki/Liite:%C3%84%C3%A4nt%C3%A4minen#IPA">IPA</a>: /'pönkeli/</li>
+        <li>tavutus: pön‧ke‧li</li>
+      </ul>
+
+      <h3>Aiheesta muualla</h3>
+      <hr class="solid">
+
+      <ul>
+        <li>ebin</li>
+      </ul>
+
+      <h3>Katso myös</h3>
+      <hr class="solid">
+      <ul>
+        <li><a href="https://kubernetes.io/">kubernetes</a></li>
+        <li><a href="https://kafka.apache.org/">kafka</a></li>
+        <li><a href="https://www.google.com/search?q=turvekylpy">turvekylpy</a></li>
+        <li><a href="https://www.blueprism.com/">blueprism</a></li>
+      </ul>
+
     </div>
-    <p style="margin-left: 2rem; font-style: italic; margin-top: -.3rem;">Esimerkiksi: "Nättii, Nättii! Tuleeks
-      paljon
-      Pönkelii?"</p>
 
-    <div style="display: flex; flex-direction: row; margin-top: -.3rem;">
-      <h3 style="font-weight: lighter;">2.</h3>
-      <h3 style="margin-left: 1rem;">Pönkeli on pönkeli.</h3>
+    <div class="right-col">
+      <h3>Taivutus</h3>
+      <hr class="solid">
+
+      <div class="table">
+        <table>
+          <tbody>
+            <tr>
+              <th colspan="3">Taivutus</th>
+            </tr>
+            <tr>
+              <th>sijamuoto</th>
+              <th>yksikkö</th>
+              <th>monikko
+              </th>
+            </tr>
+            <tr>
+              <th colspan="3">kieliopilliset sijamuodot
+              </th>
+            </tr>
+            <tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org/wiki/nominatiivi" title="nominatiivi">nominatiivi</a>
+              </td>
+              <td><b>pönkeli</b>
+              </td>
+              <td><span><a>pönkelit</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/genetiivi" title="genetiivi">genetiivi</a>
+              </td>
+              <td><span><a>pönkelin</a></span>
+              </td>
+              <td>
+                <span><a>pönkelien</a></span><br><span><a>pönkeleiden</a></span><br><span><a>pönkeleitten</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/partitiivi" title="partitiivi">partitiivi</a>
+              </td>
+              <td><span><a>pönkeliä</a></span>
+              </td>
+              <td><span><a>pönkeleitä</a></span><br><span><a>pönkelejä</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/akkusatiivi" title="akkusatiivi">akkusatiivi</a>
+              </td>
+              <td><b>pönkeli</b>; <br><span><a>pönkelin</a></span>
+              </td>
+              <td><span><a>pönkelit</a></span>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="3">sisäpaikallissijat
+              </th>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/inessiivi" title="inessiivi">inessiivi</a>
+              </td>
+              <td><span><a>pönkelissä</a></span>
+              </td>
+              <td><span><a>pönkeleissä</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/elatiivi" title="elatiivi">elatiivi</a>
+              </td>
+              <td><span><a>pönkelistä</a></span>
+              </td>
+              <td><span><a>pönkeleistä</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/illatiivi" title="illatiivi">illatiivi</a>
+              </td>
+              <td><span><a>pönkeliin</a></span>
+              </td>
+              <td><span><a>pönkeleihin</a></span>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="3">ulkopaikallissijat
+              </th>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/adessiivi" title="adessiivi">adessiivi</a>
+              </td>
+              <td><span><a>pönkelillä</a></span>
+              </td>
+              <td><span><a>pönkeleillä</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/ablatiivi" title="ablatiivi">ablatiivi</a>
+              </td>
+              <td><span><a>pönkeliltä</a></span>
+              </td>
+              <td><span><a>pönkeleiltä</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/allatiivi" title="allatiivi">allatiivi</a>
+              </td>
+              <td><span><a>pönkelille</a></span>
+              </td>
+              <td><span><a>pönkeleille</a></span>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="3">muut sijamuodot
+              </th>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/essiivi" title="essiivi">essiivi</a>
+              </td>
+              <td><span><a>pönkelinä</a></span>
+              </td>
+              <td><span><a>pönkeleinä</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/translatiivi" title="translatiivi">translatiivi</a>
+              </td>
+              <td><span><a>pönkeliksi</a></span>
+              </td>
+              <td><span><a>pönkeleiksi</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/abessiivi" title="abessiivi">abessiivi</a>
+              </td>
+              <td><span><a>pönkelittä</a></span>
+              </td>
+              <td><span><a>pönkeleittä</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/instruktiivi" title="instruktiivi">instruktiivi</a>
+              </td>
+              <td>–
+              </td>
+              <td><span><a>pönkelein</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td><a href="https://fi.wiktionary.org//wiki/komitatiivi" title="komitatiivi">komitatiivi</a>
+              </td>
+              <td>–
+              </td>
+              <td><span><a>pönkeleine-</a></span><br>+ <a
+                  href="https://fi.wiktionary.org//wiki/Luokka:Suomen_kielen_possessiivisuffiksit"
+                  title="Luokka:Suomen kielen possessiivisuffiksit">omistusliite</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
     </div>
-    <p style="margin-left: 2rem; font-style: italic; margin-top: -0.3rem;">Esimerkiksi: "Katsos, tämä tässä on
-      pönkeli."
-    </p>
 
-    <p>Katso myös: <a href="https://kubernetes.io/">kubernetes</a>,
-      <a href="https://kafka.apache.org/">kafka</a>,
-      <a href="https://www.google.com/search?q=turvekylpy">turvekylpy</a>,
-      <a href="https://www.blueprism.com/">blueprism</a>
-
-    </p>
-
-    <p style="font-weight: 900; margin-bottom: -.75rem;">Taivutus</p>
-    <p><span style="color: rgb(199, 199, 199);">yks. nom.</span> pönkeli, <span style="color: rgb(199, 199, 199);">yks.
-        gen. </span> pönkelin, <span style="color: rgb(199, 199, 199);">yks. part. </span> pönkeliä,<span
-        style="color: rgb(199, 199, 199);"> yks.
-        ill. </span> pönkeliin, <span style="color: rgb(199, 199, 199);">mon. gen. </span> pönkelien pönkelten, <span
-        style="color: rgb(199, 199, 199);"> mon. part. </span> pönkeleitä,
-      <span style="color: rgb(199, 199, 199);"> mon. ill. </span> pönkeleihin.
-    </p>
 
   </div>
 
