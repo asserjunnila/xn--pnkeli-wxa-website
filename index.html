@@ -17,9 +17,18 @@
       align-items: center;
       margin: 0;
       font-family: Times New Roman, Times, serif;
-      background-color: #1b365d;
-      color: white;
+      /* background-color: #1b365d; */
+      background-color: rgb(27, 54, 93);
+      /* color: white; */
+      color: rgb(255, 255, 255);
+
       text-align: left;
+      transition: background 0.2s;
+    }
+
+    .light-mode {
+      color: rgb(27, 54, 93);
+      background-color: rgb(255, 255, 255);
     }
 
     body>* {
@@ -58,8 +67,9 @@
     header {
       display: flex;
       flex-direction: row;
-      justify-content: center;
       align-items: center;
+      justify-content: space-between;
+
       width: 100%;
       top: 0;
       height: var(--header-height);
@@ -75,6 +85,7 @@
       height: var(--footer-height);
       bottom: 0;
       background-color: #25252B;
+      color: white;
       padding-left: .5rem;
       white-space: nowrap;
       overflow: hidden;
@@ -88,7 +99,7 @@
     }
 
     h1 {
-      text-shadow: 3px 2px 4px #000000;
+      /* text-shadow: 3px 2px 4px #000000; */
     }
 
     h3 {
@@ -136,16 +147,81 @@
     hr.solid {
       border-bottom: .01rem solid rgb(45, 44, 139);
       margin-bottom: -.75rem;
+    }
 
+    /* toggle switch style */
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+      margin-left: -76px;
+      margin-right: 20px;
+    }
+
+    .theme-switch {
+      display: inline-block;
+      height: 30px;
+      position: relative;
+      width: 56px;
+    }
+
+    .theme-switch input {
+      display: none;
+    }
+
+    .slider {
+      background-color: #ccc;
+      bottom: 0;
+      cursor: pointer;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: .4s;
+    }
+
+    .slider:before {
+      background-color: #fff;
+      bottom: 4px;
+      content: "";
+      height: 22px;
+      left: 4px;
+      position: absolute;
+      transition: .4s;
+      width: 22px;
+    }
+
+    input:checked+.slider {
+      background-color: rgb(46, 91, 153);
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
     }
   </style>
 </head>
 
-<body>
+<body id='body'>
   <header>
+    <div></div>
     <div>
       <h1>PÖNKELI</h1>
       <!-- <p style="margin-left: 0.5rem; padding-top: 1.2rem; "></p> -->
+    </div>
+    <div>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+      </div>
     </div>
   </header>
 
@@ -388,11 +464,70 @@
       <span style="color: cornflowerblue">serif</span>;
     </p>
     <p style="margin-top: -1rem;"><span style="color: cornflowerblue">color</span><span style="color: red">:</span>
-      white;</p>
+      <span id="color">white</span>;<span id="color-rights-color" style="color: gray"></span>
+    </p>
     <p style="margin-top: -1rem;"><span style="color: cornflowerblue">background-color</span><span
-        style="color: red">:</span> #1b365d; <span style="color: gray">/* PANTONE®
+        style="color: red">:</span> <span id="background-color">#1b365d</span>; <span id="color-rights-background-color"
+        style="color: gray">/* PANTONE®
         534 C */ </span></p>
   </footer>
+  <script>
+
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    var element = document.body;
+    // var color = document.getElementById('color').innerText
+    // var backgroundColor = document.getElementById('background-color').innerText
+
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+    if (currentTheme) {
+      if (currentTheme === 'dark') {
+        toggleDark()
+      } else {
+        toggleLight()
+      }
+    } else {
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (prefersDarkScheme.matches) {
+        toggleDark()
+      } else {
+        toggleLight()
+      }
+    }
+
+    function switchTheme(e) {
+      if (e.target.checked) {
+        toggleDark()
+
+      }
+      else {
+        toggleLight()
+      }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+
+    function toggleDark() {
+      localStorage.setItem('theme', 'dark');
+      element.classList.remove('light-mode');
+      toggleSwitch.checked = true;
+      document.getElementById('color').innerText = "rgb(255, 255, 255)";
+      document.getElementById('color-rights-color').innerText = ""
+      document.getElementById('background-color').innerText = "rgb(27, 54, 93)";
+      document.getElementById('color-rights-background-color').innerText = "/* PANTONE® 534 C */"
+    }
+
+    function toggleLight() {
+      element.classList.add('light-mode');
+      localStorage.setItem('theme', 'light');
+      toggleSwitch.checked = false;
+      document.getElementById('color').innerText = "rgb(27, 54, 93)";
+      document.getElementById('color-rights-color').innerText = " /* PANTONE® 534 C */"
+      document.getElementById('background-color').innerText = "rgb(255, 255, 255)";
+      document.getElementById('color-rights-background-color').innerText = ""
+    }
+
+  </script>
 </body>
 
 </html>
