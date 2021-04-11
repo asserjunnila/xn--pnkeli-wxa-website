@@ -26,10 +26,6 @@
       transition: background 0.2s;
     }
 
-    .light-mode {
-      color: rgb(27, 54, 93);
-      background-color: rgb(255, 255, 255);
-    }
 
     body>* {
       font-family: Times New Roman, Times, serif;
@@ -148,124 +144,17 @@
       border-bottom: .01rem solid rgb(45, 44, 139);
       margin-bottom: -.75rem;
     }
-
-    /* toggle switch style */
-    .theme-switch-wrapper {
-      display: flex;
-      align-items: center;
-      margin-left: -76px;
-      margin-right: 20px;
-    }
-
-    .theme-switch {
-      display: inline-block;
-      height: 30px;
-      position: relative;
-      width: 56px;
-    }
-
-    .theme-switch input {
-      display: none;
-    }
-
-    .slider {
-      background-color: #ccc;
-      bottom: 0;
-      cursor: pointer;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transition: .2s;
-    }
-
-    .dark-icon {
-      position: absolute;
-      left: 5px;
-      top: 5px;
-      color: white;
-    }
-
-    .light-icon {
-      position: absolute;
-      right: 5px;
-      top: 5px;
-      color: white;
-    }
-
-    .slider:before {
-      background-color: rgb(27, 54, 93);
-      /* background-color: #fff; */
-      bottom: 4px;
-      content: "";
-      height: 22px;
-      left: 4px;
-      position: absolute;
-      transition: .2s;
-      width: 22px;
-    }
-
-    input:checked+.slider {
-      background-color: rgb(46, 91, 153);
-    }
-
-    input:checked+.slider:before {
-      transform: translateX(26px);
-      background-color: white;
-
-    }
-
-    .slider.round {
-      border-radius: 34px;
-
-    }
-
-    .slider.round:before {
-      border-radius: 50%;
-    }
   </style>
 </head>
 
-<body id='body'>
+<body>
   <header>
     <div></div>
     <div>
       <h1>PÖNKELI</h1>
-      <!-- <p style="margin-left: 0.5rem; padding-top: 1.2rem; "></p> -->
     </div>
     <div>
-      <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-          <input type="checkbox" id="checkbox" />
-          <div class="slider round"></div>
-          <div class="dark-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox=" 0 0 24 24"
-              fill="rgb(27, 54, 93)" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="
-            transform: rotate(40deg)">
-              <mask id="mask">
-                <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                <circle cx="12" cy="4" r="9" fill="black" />
-              </mask>
-              <circle fill="rgb(27, 54, 93)" cx="12" cy="12" r="9" mask="url(#mask)" />
-            </svg>
-          </div>
-          <div class="light-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle fill="white" cx="12" cy="12" r="5" />
-              <g stroke="currentColor">
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-              </g>
-            </svg>
-          </div>
 
-        </label>
-      </div>
     </div>
   </header>
 
@@ -290,18 +179,6 @@
       <p style="margin-left: 2rem; font-style: italic; margin-top: -0.3rem;">Esimerkiksi: "PÖNKELI PÖNKELI PÖNKELI
         PÖNKELI"
       </p>
-
-
-      <!-- <p style="font-weight: 900; margin-bottom: -.75rem;">Taivutus</p>
-      <p><span style="color: rgb(199, 199, 199);">yks. nom.</span> pönkeli, <span 
-          style="color: rgb(199, 199, 199);">yks.
-          gen. </span> pönkelin, <span style="color: rgb(199, 199, 199);">yks. part. </span> pönkeliä,<span
-          style="color: rgb(199, 199, 199);"> yks.
-          ill. </span> pönkeliin, <span style="color: rgb(199, 199, 199);">mon. gen. </span> pönkelien pönkelten, <span
-          style="color: rgb(199, 199, 199);"> mon. part. </span> pönkeleitä,
-        <span style="color: rgb(199, 199, 199);"> mon. ill. </span> pönkeleihin.
-      </p> -->
-
       <h3>Ääntäminen</h3>
       <hr class="solid">
       <ul>
@@ -515,63 +392,7 @@
         style="color: gray">/* PANTONE®
         534 C */ </span></p>
   </footer>
-  <script>
 
-    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-    var element = document.body;
-    // var color = document.getElementById('color').innerText
-    // var backgroundColor = document.getElementById('background-color').innerText
-
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-    if (currentTheme) {
-      if (currentTheme === 'dark') {
-        toggleDark()
-      } else {
-        toggleLight()
-      }
-    } else {
-      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-      if (prefersDarkScheme.matches) {
-        toggleDark()
-      } else {
-        toggleLight()
-      }
-    }
-
-    function switchTheme(e) {
-      if (e.target.checked) {
-        toggleDark()
-
-      }
-      else {
-        toggleLight()
-      }
-    }
-
-    toggleSwitch.addEventListener('change', switchTheme, false);
-
-    function toggleDark() {
-      localStorage.setItem('theme', 'dark');
-      element.classList.remove('light-mode');
-      toggleSwitch.checked = true;
-      document.getElementById('color').innerText = "rgb(255, 255, 255)";
-      document.getElementById('color-rights-color').innerText = ""
-      document.getElementById('background-color').innerText = "rgb(27, 54, 93)";
-      document.getElementById('color-rights-background-color').innerText = "/* PANTONE® 534 C */"
-    }
-
-    function toggleLight() {
-      element.classList.add('light-mode');
-      localStorage.setItem('theme', 'light');
-      toggleSwitch.checked = false;
-      document.getElementById('color').innerText = "rgb(27, 54, 93)";
-      document.getElementById('color-rights-color').innerText = " /* PANTONE® 534 C */"
-      document.getElementById('background-color').innerText = "rgb(255, 255, 255)";
-      document.getElementById('color-rights-background-color').innerText = ""
-    }
-
-  </script>
 </body>
 
 </html>
